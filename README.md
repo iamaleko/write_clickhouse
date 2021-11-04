@@ -20,7 +20,7 @@ ORDER BY (time)
 TTL time + INTERVAL 1 MONTH -- rows older than one month will be truncated, suitable for logs
 ```
 4. Stop collectd processing with `service collectd stop`
-5. Change collected configuration file `/etc/collectd/collectd.conf`:
+5. Change collectd configuration file `/etc/collectd/collectd.conf`:
 
 ```
 LoadPlugin python
