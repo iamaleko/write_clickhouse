@@ -36,7 +36,7 @@ LoadPlugin python
                 password ""
                 database "default" # clickhouse database name
                 table "my_server_stats" # clickhouse table name
-                write "df_complex.free" "df_complex.used" # optional, type.type_instance list you want to collect, allow all types if empty
+                write "df_complex.free" "df_complex.used" "memory.*" # optional, type.type_instance list you want to collect, allow all types if empty
         </Module>
 </Plugin>
 ```
