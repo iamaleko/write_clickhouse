@@ -33,6 +33,7 @@ FIELD_VALUES = 'values'
 # values Array(String) -- array of string values
 
 WRITE = {}
+WRITE_ANY = '*'
 
 def config(config):
   for kv in config.children:
@@ -75,7 +76,7 @@ def write(data):
 
   # write only if the type and type_instance have been filtered,
   # or the filtering parameter is empty
-  if len(WRITE) == 0 or type in WRITE and type_instance in WRITE[type]:
+  if len(WRITE) == 0 or type in WRITE and (WRITE_ANY in WRITE[type] or type_instance in WRITE[type]):
     # clickhouse_driver does not support multithreading since the native clickhouse
     # protocol only supports one request at a time within a single connection,
     # so you have to create a new connection for each request
