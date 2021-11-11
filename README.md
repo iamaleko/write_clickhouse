@@ -1,5 +1,5 @@
 # write_clickhouse
-Collectd python plugin for streaming data into clickhouse
+Collectd python plugin for streaming data to clickhouse
 
 ## Installation
 
